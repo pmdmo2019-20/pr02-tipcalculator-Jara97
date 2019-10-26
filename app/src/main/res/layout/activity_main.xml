@@ -4,4 +4,241 @@
      style="@style/Base.TextAppearance.AppCompat.Headline" for EditTexts
      style="@style/Widget.AppCompat.Button.Borderless" for Buttons
 -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/main_margin">
 
+    <!-- ... -->
+
+    <TextView
+        android:id="@+id/lblBill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bill"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtBill"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textAlignment="viewEnd"
+        android:maxLength="5"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="@string/cero"
+        app:layout_constraintEnd_toStartOf="@+id/lblEu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblBill" />
+
+    <EditText
+        android:id="@+id/txtPercentage"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:maxLength="6"
+        android:selectAllOnFocus="true"
+        android:text="@string/tipInicial"
+        android:textAlignment="viewEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTip" />
+
+    <EditText
+        android:id="@+id/txtTip2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="numberDecimal"
+        android:text="@string/cero"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toStartOf="@+id/lblEu2"
+        app:layout_constraintStart_toEndOf="@+id/lblEu3"
+        app:layout_constraintTop_toBottomOf="@+id/lblTip" />
+
+    <TextView
+        android:id="@+id/lblTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/tip2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBill" />
+
+    <TextView
+        android:id="@+id/lblTip2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tip"
+        app:layout_constraintBottom_toTopOf="@+id/txtPercentage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBill" />
+
+    <TextView
+        android:id="@+id/lblTotal"
+        android:layout_width="62dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/total"
+        android:focusable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTip2" />
+
+    <EditText
+        android:id="@+id/txtTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:focusable="false"
+        android:textAlignment="viewEnd"
+        android:inputType="numberDecimal"
+        android:text="@string/cero"
+        app:layout_constraintEnd_toStartOf="@+id/lblEu4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTotal" />
+
+    <Button
+        android:id="@+id/btnResetTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="@string/reset"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTotal" />
+
+    <TextView
+        android:id="@+id/lblEu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eu"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtBill"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lblEu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eu"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtTip2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lblEu3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="%"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtPercentage"
+        app:layout_constraintEnd_toStartOf="@+id/txtTip2"
+        app:layout_constraintStart_toEndOf="@+id/txtPercentage" />
+
+    <TextView
+        android:id="@+id/lblEu4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eu"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtTotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtTotal" />
+
+    <TextView
+        android:id="@+id/lblDiner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/diners"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnResetTip" />
+
+    <TextView
+        android:id="@+id/lblPerDiner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/per_diner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnResetTip" />
+
+    <EditText
+        android:id="@+id/txtDiner"
+        android:layout_width="0dp"
+        android:textAlignment="viewEnd"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:focusable="false"
+        android:text="@string/cero"
+        app:layout_constraintEnd_toStartOf="@+id/lblEu5"
+        app:layout_constraintStart_toEndOf="@+id/txtDiners"
+        app:layout_constraintTop_toBottomOf="@+id/lblDiner" />
+
+    <EditText
+        android:id="@+id/txtDiners"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:maxLength="3"
+        android:selectAllOnFocus="true"
+        android:textAlignment="viewEnd"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1"
+        app:layout_constraintEnd_toStartOf="@+id/txtDiner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblDiner" />
+
+    <TextView
+        android:id="@+id/lblEu5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="€"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtDiner"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:focusable="false"
+        android:text="@string/rounded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblEu5" />
+
+    <EditText
+        android:id="@+id/txtPerDinerRounded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="numberDecimal"
+        android:text="@string/cero"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toStartOf="@+id/lblEu6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/lblEu6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eu"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtPerDinerRounded"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnResetDiners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorAccent"
+        android:text="@string/reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblEu6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
